@@ -105,12 +105,16 @@ class Gallery {
     }
   }
 
-  saveSketch(code) {
+  saveSketch(code, blob) {
     let self = this
     //console.log('saving in gallery', code)
     let base64 = this.encodeBase64(code)
   //  console.log('code is', base64)
 
+  var formData = new FormData()
+  formData.append('image', blob)
+
+    console.log('blob is', blob)
     let query = {
       code: base64,
       parent: this.current ? this.current.sketch_id : null
@@ -122,6 +126,7 @@ class Gallery {
       // .send({
       //   code: base64
       // })
+      .send(formData)
       .query(query)
       .end((err, res) => {
         if(err) {

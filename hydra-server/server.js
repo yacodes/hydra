@@ -2,6 +2,8 @@ const fs = require('fs')
 const express = require('express')
 const app = express()
 const browserify = require('browserify-middleware')
+const bodyParser = require('body-parser')
+
 //const https = require('https')
 var server;
 const path = require('path')
@@ -78,7 +80,7 @@ app.get('/sketches', function (request, response) {
 })
 
 app.post('/sketch', function (request, response) {
-  console.log('post sketch', request.query)
+  console.log('post sketch', request.body)
   db.insert({
     "code": request.query.code,
     "parent": request.query.parent,
@@ -194,3 +196,4 @@ io.on('connection', function (socket) {
 })
 
 app.use(express.static(path.join(__dirname, '/public')))
+app.use(bodyParser.urlencoded({ extended: true }))

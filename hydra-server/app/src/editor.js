@@ -20,12 +20,19 @@ var EditorClass = function () {
       'Shift-Ctrl-Enter': function (instance) {
           self.evalAll((code, error) => {
             console.log('evaluated', code, error)
+            // if(!error){
+            //   self.saveSketch(code)
+            // }
+          })
+      },
+      'Shift-Ctrl-P': function (instance) {
+          self.evalAll((code, error) => {
+            console.log('evaluated', code, error)
             if(!error){
               self.saveSketch(code)
             }
           })
       },
-
       'Shift-Ctrl-H': function (instance) {
         var l = document.getElementsByClassName('CodeMirror-scroll')[0]
         if (isShowing) {

@@ -15,12 +15,13 @@ function init () {
   var canvas = Canvas(document.getElementById('hydra-canvas'))
   canvas.size()
   var pb = new PatchBay()
+
   var hydra = new HydraSynth({
     pb: pb,
     canvas: canvas.element,
     autoLoop: false})
   var editor = new Editor()
-
+    window.hydra = hydra
   // variables related to popup window
   var close = document.getElementById("close-modal")
   var isClosed = false
@@ -32,7 +33,10 @@ function init () {
     editor.cm.setValue(code)
     editor.evalAll()
     editor.saveSketch = (code) => {
-      sketches.saveSketch(code)
+      hydra.getScreenImage((blob) => {
+        sketches.saveSketch(code, blob)
+      })
+
     }
 
     // if a sketch was found based on the URL parameters, dont show intro window
