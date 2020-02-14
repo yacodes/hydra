@@ -14,7 +14,7 @@ module.exports = application => {
 
   const Datastore = require('nedb');
   var db = new Datastore({
-    filename: `${app.getAppPath('userData')}/hydra/sketches`,
+    filename: app ? `${app.getAppPath('userData')}/hydra/sketches` : '.sketches',
     autoload: true,
   });
 

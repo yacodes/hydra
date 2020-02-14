@@ -70,12 +70,8 @@ render(o0);
     gallery: sketches,
     menu: menu,
     repl: repl,
-<<<<<<< HEAD
     log: log
   })
-=======
-  });
->>>>>>> Update
 
   // define extra functions (eventually should be added to hydra-synth?)
 
