@@ -1,0 +1,2515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-02-12 Wed 12:37 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Aleksandr Yakunichev" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org6df42dd">1. `bins` :: integer (default `x`)</a></li>
+<li><a href="#orgdae80ff">2. `frequency` :: float (default `x`)</a></li>
+<li><a href="#orgd372f35">3. `amount` :: float (default `x`)</a></li>
+<li><a href="#org6adc1b0">4. `amount` :: float (default `x`)</a></li>
+<li><a href="#org559ed17">5. `amount` :: float (default `0.4`)</a></li>
+<li><a href="#org45536a4">6. `amount` :: float (default `1.6`)</a></li>
+<li><a href="#orgdbdde68">7. `r` :: float</a></li>
+<li><a href="#orgeb2d0ea">8. `g` :: float</a></li>
+<li><a href="#orgcc419e3">9. `b` :: float</a></li>
+<li><a href="#org088036f">10. `amount` :: float (default `0.005`)</a></li>
+<li><a href="#orgb1a100a">11. `amount` :: float (default `1.0`)</a></li>
+<li><a href="#orga167cd4">12. `threshold` :: float (default `0.5`)</a></li>
+<li><a href="#orgcb19f46">13. `tolerance` :: float (default `0.1`)</a></li>
+<li><a href="#org8b01d55">14. `bins` :: float (default `3.0`)</a></li>
+<li><a href="#org7be952c">15. `gamma` :: float (default `0.6`)</a></li>
+<li><a href="#orga699105">16. `amount` :: float (default `2.0`)</a></li>
+<li><a href="#orgd02d1fe">17. `r` :: float (default `0.5`)</a></li>
+<li><a href="#org259831f">18. `g` :: float (default `0.5`)</a></li>
+<li><a href="#orgfd0082c">19. `b` :: float (default `0.5`)</a></li>
+<li><a href="#org2192093">20. `a` :: float (default `0.5`)</a></li>
+<li><a href="#org0641250">21. `threshold` :: float (default `0.5`)</a></li>
+<li><a href="#orgd347149">22. `tolerance` :: float (default `0.04`)</a></li>
+<li><a href="#org7617f42">23. `nSides` :: float (default `4.0`)</a></li>
+<li><a href="#orgb9678a9">24. `pixelX` :: float (default `20.0`)</a></li>
+<li><a href="#orgbd5ec44">25. `pixelY` :: float (default `20.0`)</a></li>
+<li><a href="#org70c41b1">26. `repeatX` :: float (default `3.0`)</a></li>
+<li><a href="#org595a406">27. `repeatY` :: float (default `3.0`)</a></li>
+<li><a href="#orgeada6c7">28. `offsetX` :: float (default `0.0`)</a></li>
+<li><a href="#orgc625961">29. `offsetY` :: float (default `0.0`)</a></li>
+<li><a href="#org8aa2be4">30. `reps` :: float (default `3.0`)</a></li>
+<li><a href="#org2add107">31. `offset` :: float (default `0.0`)</a></li>
+<li><a href="#org7ea25e5">32. `reps` :: float (default `3.0`)</a></li>
+<li><a href="#org07ecbaf">33. `offset` :: float (default `0.0`)</a></li>
+<li><a href="#org5f21d3c">34. `angle` :: float (default `10.0`)</a></li>
+<li><a href="#orga07aacb">35. `speed` :: float (default `0.0`)</a></li>
+<li><a href="#org02f8e56">36. `size` :: float (default `1.5`)</a></li>
+<li><a href="#orgc7930d1">37. `xMult` :: float (default `1.0`)</a></li>
+<li><a href="#org2e61cbc">38. `yMult` :: float (default `1.0`)</a></li>
+<li><a href="#org405b5e0">39. `scrollX` :: float (default `0.5`)</a></li>
+<li><a href="#orgb549fd0">40. `speed` :: float (default `0.0`)</a></li>
+<li><a href="#orga5ba871">41. `scrollY` :: float (default `0.5`)</a></li>
+<li><a href="#org0d1b471">42. `speed` :: float (default `0.0`)</a></li>
+<li><a href="#org753a243">43. `.x` :: x position of mouse</a></li>
+<li><a href="#org47d3ac5">44. `.y` :: y position of mouse</a></li>
+<li><a href="#orgf2d87a9">45. `time` :: the current time</a></li>
+<li><a href="#org22dcaae">46. `texture`</a></li>
+<li><a href="#org768fd8a">47. `amount` :: float (default `0.1`)</a></li>
+<li><a href="#org77d9243">48. `texture`</a></li>
+<li><a href="#org36081da">49. `amount` :: float (default `1.0`)</a></li>
+<li><a href="#org4720ce5">50. `texture`</a></li>
+<li><a href="#orgcf7655d">51. `nSides` :: float (default `4.0`)</a></li>
+<li><a href="#orge47c304">52. `texture`</a></li>
+<li><a href="#orgb9d12da">53. `multiple` :: float (default `10.0`)</a></li>
+<li><a href="#orge60103e">54. `offset` :: float (default `3.0`)</a></li>
+<li><a href="#org902b1d4">55. `texture`</a></li>
+<li><a href="#org87f6532">56. `repeatX` :: float (default `3.0`)</a></li>
+<li><a href="#orgd93084e">57. `repeatY` :: float (default `3.0`)</a></li>
+<li><a href="#org07c2cf0">58. `offsetX` :: float (default `0.5`)</a></li>
+<li><a href="#org2762658">59. `offsetY` :: float (default `0.5`)</a></li>
+<li><a href="#orge1c1727">60. `texture`</a></li>
+<li><a href="#org1d42c15">61. `reps` :: float (default `3.0`)</a></li>
+<li><a href="#orga2bc200">62. `offset` :: float (default `0.5`)</a></li>
+<li><a href="#org997e36f">63. `texture`</a></li>
+<li><a href="#org778f7c9">64. `reps` :: float (default `3.0`)</a></li>
+<li><a href="#orgd226888">65. `offset` :: float (default `0.5`)</a></li>
+<li><a href="#org8d20816">66. `texture`</a></li>
+<li><a href="#org525bbcc">67. `multiple` :: float (default `1.0`)</a></li>
+<li><a href="#org644f7a2">68. `offset` :: float (default `0.0`)</a></li>
+<li><a href="#org4458e89">69. `texture`</a></li>
+<li><a href="#orga1a2330">70. `multiple` :: float (default `1.0`)</a></li>
+<li><a href="#org1d067ee">71. `offset` :: float (default `1.0`)</a></li>
+<li><a href="#org0104f01">72. `texture`</a></li>
+<li><a href="#orgab88d44">73. `scrollX` :: float (default `0.5`)</a></li>
+<li><a href="#org80fff94">74. `speed` :: float (default `0.0`)</a></li>
+<li><a href="#org4f37625">75. `texture`</a></li>
+<li><a href="#orge5757a9">76. `scrollY` :: float (default `0.5`)</a></li>
+<li><a href="#orgbc0e46b">77. `speed` :: float (default `0.0`)</a></li>
+<li><a href="#org6b3ccc3">78. `texture`</a></li>
+<li><a href="#orgcb2dfed">79. `amount` :: float (default `0.5`)</a></li>
+<li><a href="#org0cde316">80. `texture`</a></li>
+<li><a href="#orgc4cec39">81. `amount` :: float (default `0.5`)</a></li>
+<li><a href="#orga79a69f">82. `texture`</a></li>
+<li><a href="#org8edd208">83. `texture`</a></li>
+<li><a href="#org67d09ed">84. `texture`</a></li>
+<li><a href="#org88108a5">85. `reps` :: float (default `3.0`)</a></li>
+<li><a href="#org82e74c5">86. `offset` :: float (default `0.5`)</a></li>
+<li><a href="#orge2da64a">87. `texture`</a></li>
+<li><a href="#org5b445b7">88. `amount` :: float (default `1.0`)</a></li>
+<li><a href="#org86b1693">89. `speed` :: float (default `x`)</a></li>
+<li><a href="#org734cb9d">90. `scale` :: int (default `10.0`)</a></li>
+<li><a href="#orgd8a22ba">91. `offset` :: float (default `0.1`)</a></li>
+<li><a href="#org64d83cb">92. `frequency` :: float (default `60.0`)</a></li>
+<li><a href="#org46b10cf">93. `sync` :: float (default `0.1`)</a></li>
+<li><a href="#orgf9fdce3">94. `offset` :: float (default `0.0`)</a></li>
+<li><a href="#org1bbd91d">95. `buffer`</a></li>
+<li><a href="#org0e1b62b">96. `buffer`: buffer (default `o0`)</a></li>
+<li><a href="#orgc65876e">97. `sides` :: int (default `3.0`)</a></li>
+<li><a href="#org52ff85f">98. `radius` :: float (default `0.3`)</a></li>
+<li><a href="#orga19df90">99. `smoothing` :: float (default `0.01`)</a></li>
+<li><a href="#org223a8e5">100. `r` :: float (default `0.0`)</a></li>
+<li><a href="#orgf65a480">101. `g` :: float (default `0.0`)</a></li>
+<li><a href="#org6fbb6ad">102. `b` :: float (default `0.0`)</a></li>
+<li><a href="#org6f6b1af">103. `a` :: float (default `1.0`)</a></li>
+<li><a href="#org9103550">104. `input` :: input (examples: `o0`, `s1`)</a></li>
+<li><a href="#orgfb4e554">105. `scale` :: float (default `5`)</a></li>
+<li><a href="#org09392aa">106. `speed` :: float (default `0.3`)</a></li>
+<li><a href="#org7897592">107. `blending` :: float (default `0.3`)</a></li>
+<li><a href="#org7610459">108. `amount` :: float (default `x`)</a></li>
+</ul>
+</div>
+</div>
+<ul class="org-ul">
+<li>[Categories of functions](#categories)</li>
+<li>[Complete contents of functions](#contents)</li>
+</ul>
+
+<p>
+## Categories
+</p>
+
+<ul class="org-ul">
+<li>[Audio](#audio)</li>
+<li>[Color](#color)</li>
+<li>[Geometry](#geometry)</li>
+<li>[Global variables](#global-variables)</li>
+<li>[Modulators](#modulators)</li>
+<li>[Operators](#operators)</li>
+<li>[Sources](#sources)</li>
+<li>[Parameter sequences](#parameter-sequences)</li>
+</ul>
+
+<p>
+## Contents
+</p>
+
+<ul class="org-ul">
+<li>[Audio](#audio)
+<ul class="org-ul">
+<li>[hide](#hide)</li>
+<li>[setBins](#setbins)</li>
+<li>[setCutoff](#setcutoff)</li>
+<li>[setScale](#setScale)</li>
+<li>[setSmooth](#setSmooth)</li>
+<li>[show](#show)</li>
+</ul></li>
+<li>[Color](#color)
+<ul class="org-ul">
+<li>[brightness](#brightness)</li>
+<li>[contrast](#contrast)</li>
+<li>[color `vec4`](#color-vec4)</li>
+<li>[colorama](#colorama)</li>
+<li>[invert](#invert)</li>
+<li>[luma](#luma)</li>
+<li>[posterize](#posterize)</li>
+<li>[saturate](#saturate)</li>
+<li>[shift](#shift)</li>
+<li>[thresh](#thresh)</li>
+</ul></li>
+<li>[Geometry](#geometry)
+<ul class="org-ul">
+<li>[kaleid](#kaleid)</li>
+<li>[pixelate](#pixelate)</li>
+<li>[repeat](#repeat)</li>
+<li>[repeatX](#repeatX)</li>
+<li>[repeatY](#repeatY)</li>
+<li>[rotate](#rotate)</li>
+<li>[scale](#scale)</li>
+<li>[scrollX](#scrollX)</li>
+<li>[scrollY](#scrollY)</li>
+</ul></li>
+<li>[Global variables](#global-variables)
+<ul class="org-ul">
+<li>[mouse](#mouse)</li>
+<li>[time](#time)</li>
+</ul></li>
+<li>[Modulators](#modulators)
+<ul class="org-ul">
+<li>[modulate](#modulate)</li>
+<li>[modulateHue](#modulateHue)</li>
+<li>[modulateKaleid](#modulateKaleid)</li>
+<li>[modulatePixelate](#modulatePixelate)</li>
+<li>[modulateRepeat](#modulateRepeat)</li>
+<li>[modulateRepeatX](#modulateRepeatX)</li>
+<li>[modulateRepeatY](#modulateRepeatY)</li>
+<li>[modulateRotate](#modulateRotate)</li>
+<li>[modulateScale](#modulateScale)</li>
+<li>[modulateScrollX](#modulateScrollX)</li>
+<li>[modulateScrollY](#modulateScrollY)</li>
+</ul></li>
+<li>[Operators](#operators)
+<ul class="org-ul">
+<li>[add](#add)</li>
+<li>[blend](#blend)</li>
+<li>[diff](#diff)</li>
+<li>[layer](#layer)</li>
+<li>[mask](#mask)</li>
+<li>[mult](#mult)</li>
+</ul></li>
+<li>[Sources](#sources)
+<ul class="org-ul">
+<li>[gradient](#gradient)</li>
+<li>[noise](#noise)</li>
+<li>[osc](#osc)</li>
+<li>[out](#out)</li>
+<li>[render](#render)</li>
+<li>[shape](#shape)</li>
+<li>[solid](#solid)</li>
+<li>[src](#src)</li>
+<li>[voronoi](#voronoi)</li>
+</ul></li>
+<li>[Parameter sequences](#parameter-sequences)
+<ul class="org-ul">
+<li>[Lists as parameter sequences](#lists-as-parameter-sequences)</li>
+<li>[Functions on parameter sequences](#functions-on-parameter-sequences)
+<ul class="org-ul">
+<li>[fast](#fast)</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>
+&#x2014;
+</p>
+
+<p>
+## Audio
+</p>
+
+<p>
+Functions for manipulating audio signals.
+</p>
+
+<ul class="org-ul">
+<li>[hide](#hide)</li>
+<li>[setBins](#setbins)</li>
+<li>[setCutoff](#setcutoff)</li>
+<li>[setScale](#setScale)</li>
+<li>[setSmooth](#setSmooth)</li>
+<li>[show](#show)</li>
+</ul>
+
+<p>
+### hide
+</p>
+
+<p>
+`.hide()`
+</p>
+
+<p>
+### setBins
+</p>
+
+<p>
+`.setBins( bins )`
+</p>
+
+<div id="outline-container-org6df42dd" class="outline-2">
+<h2 id="org6df42dd"><span class="section-number-2">1</span> `bins` :: integer (default `x`)</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+### setCutoff
+</p>
+
+<p>
+`.setCutoff( frequency )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdae80ff" class="outline-2">
+<h2 id="orgdae80ff"><span class="section-number-2">2</span> `frequency` :: float (default `x`)</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+### setScale
+</p>
+
+<p>
+`.setScale( amount )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd372f35" class="outline-2">
+<h2 id="orgd372f35"><span class="section-number-2">3</span> `amount` :: float (default `x`)</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+### setSmooth
+</p>
+
+<p>
+`.setSmooth( amount )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6adc1b0" class="outline-2">
+<h2 id="org6adc1b0"><span class="section-number-2">4</span> `amount` :: float (default `x`)</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+### show
+</p>
+
+<p>
+`.show()`
+</p>
+
+<p>
+&#x2014;
+</p>
+
+<p>
+## Color
+</p>
+
+<p>
+Functions for manipulating color.
+</p>
+
+<ul class="org-ul">
+<li>[brightness](#brightness)</li>
+<li>[contrast](#contrast)</li>
+<li>[color `vec4`](#color-vec4)</li>
+<li>[colorama](#colorama)</li>
+<li>[invert](#invert)</li>
+<li>[luma](#luma)</li>
+<li>[posterize](#posterize)</li>
+<li>[saturate](#saturate)</li>
+<li>[shift](#shift)</li>
+<li>[thresh](#thresh)</li>
+</ul>
+
+<p>
+### brightness
+</p>
+
+<p>
+`.brightness( amount )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-org559ed17" class="outline-2">
+<h2 id="org559ed17"><span class="section-number-2">5</span> `amount` :: float (default `0.4`)</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+osc(20,0,2)
+  .brightness( ({time}) =&gt; Math.sin(time) )
+  .out(o0)
+```
+</p>
+
+<p>
+### contrast
+</p>
+
+<p>
+`.contrast( amount )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-org45536a4" class="outline-2">
+<h2 id="org45536a4"><span class="section-number-2">6</span> `amount` :: float (default `1.6`)</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+Larger `amount` value makes higher contrast.
+</p>
+
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+// 20Hz oscillator with contrast interpolating between 0.0-5.0
+osc(20).contrast( ({time}) =&gt; Math.sin(time) * 5 ).out(o0)
+```
+</p>
+
+<p>
+### color `vec4`
+</p>
+
+<p>
+`.color( r, g, b )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdbdde68" class="outline-2">
+<h2 id="orgdbdde68"><span class="section-number-2">7</span> `r` :: float</h2>
+</div>
+<div id="outline-container-orgeb2d0ea" class="outline-2">
+<h2 id="orgeb2d0ea"><span class="section-number-2">8</span> `g` :: float</h2>
+</div>
+<div id="outline-container-orgcc419e3" class="outline-2">
+<h2 id="orgcc419e3"><span class="section-number-2">9</span> `b` :: float</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+Colorize texture.
+</p>
+
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+<i>/ 20Hz oscillator source
+/</i> color sequence of Red, Green, Blue, White, Black
+// output to buffer o0
+osc(20).color([1,0,0,1,0],[0,1,0,1,0],[0,0,1,1,0]).out(o0)
+```
+</p>
+
+<p>
+### colorama
+</p>
+
+<p>
+`.colorama( amount )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-org088036f" class="outline-2">
+<h2 id="org088036f"><span class="section-number-2">10</span> `amount` :: float (default `0.005`)</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+Shift HSV values.
+</p>
+
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+<i>/ 20Hz oscillator source
+/</i> color sequence of Red, Green, Blue, White, Black
+<i>/ colorama sequence of 0.005, 0.5, 1.0 at 1/8 speed
+/</i> output to buffer o0
+osc(20)
+  .color([1,0,0,1,0],[0,1,0,1,0],[0,0,1,1,0])
+  .colorama([0.005,0.33,0.66,1.0].fast(0.125))
+  .out(o0)
+```
+</p>
+
+<p>
+```javascript
+// 
+noise(3,0.1).colorama( ({time}) =&gt; Math.sin(time/5) ).out(o0)
+```
+</p>
+
+<p>
+### invert
+</p>
+
+<p>
+`.invert( amount )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb1a100a" class="outline-2">
+<h2 id="orgb1a100a"><span class="section-number-2">11</span> `amount` :: float (default `1.0`)</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+Invert color.
+</p>
+
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+solid(1,1,1).invert([0,1]).out(o0)
+```
+</p>
+
+<p>
+### luma
+</p>
+
+<p>
+`.luma( threshold, tolerance )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga167cd4" class="outline-2">
+<h2 id="orga167cd4"><span class="section-number-2">12</span> `threshold` :: float (default `0.5`)</h2>
+</div>
+<div id="outline-container-orgcb19f46" class="outline-2">
+<h2 id="orgcb19f46"><span class="section-number-2">13</span> `tolerance` :: float (default `0.1`)</h2>
+<div class="outline-text-2" id="text-13">
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+// default
+osc(10,0,1).luma(0.5,0.1).out(o0)
+</p>
+
+<p>
+osc(10,0,[0,0.5,1,2]).luma([0.1,0.25,0.75,1].fast(0.25),0.1).out(o0)
+```
+</p>
+
+<p>
+### posterize
+</p>
+
+<p>
+`.posterize( bins, gamma )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8b01d55" class="outline-2">
+<h2 id="org8b01d55"><span class="section-number-2">14</span> `bins` :: float (default `3.0`)</h2>
+</div>
+<div id="outline-container-org7be952c" class="outline-2">
+<h2 id="org7be952c"><span class="section-number-2">15</span> `gamma` :: float (default `0.6`)</h2>
+<div class="outline-text-2" id="text-15">
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+// static gradient posterized, varying bins
+gradient(0).posterize( [1, 5, 15, 30] , 0.5 ).out(o0)
+</p>
+
+<p>
+// static gradient posterized, varying gamma
+gradient(0).posterize( 3, [0.1, 0.5, 1.0, 2.0] ).out(o0)
+```
+</p>
+
+<p>
+### saturate
+</p>
+
+<p>
+`.saturate( amount )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga699105" class="outline-2">
+<h2 id="orga699105"><span class="section-number-2">16</span> `amount` :: float (default `2.0`)</h2>
+<div class="outline-text-2" id="text-16">
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+osc(10,0,1).saturate( ({time}) =&gt; Math.sin(time) * 10 ).out()
+```
+</p>
+
+<p>
+### shift
+</p>
+
+<p>
+`.shift( r, g, b, a )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd02d1fe" class="outline-2">
+<h2 id="orgd02d1fe"><span class="section-number-2">17</span> `r` :: float (default `0.5`)</h2>
+</div>
+<div id="outline-container-org259831f" class="outline-2">
+<h2 id="org259831f"><span class="section-number-2">18</span> `g` :: float (default `0.5`)</h2>
+</div>
+<div id="outline-container-orgfd0082c" class="outline-2">
+<h2 id="orgfd0082c"><span class="section-number-2">19</span> `b` :: float (default `0.5`)</h2>
+</div>
+<div id="outline-container-org2192093" class="outline-2">
+<h2 id="org2192093"><span class="section-number-2">20</span> `a` :: float (default `0.5`)</h2>
+<div class="outline-text-2" id="text-20">
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+</p>
+
+<p>
+```
+</p>
+
+<p>
+### thresh
+</p>
+
+<p>
+`.thresh( threshold, tolerance )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0641250" class="outline-2">
+<h2 id="org0641250"><span class="section-number-2">21</span> `threshold` :: float (default `0.5`)</h2>
+</div>
+<div id="outline-container-orgd347149" class="outline-2">
+<h2 id="orgd347149"><span class="section-number-2">22</span> `tolerance` :: float (default `0.04`)</h2>
+<div class="outline-text-2" id="text-22">
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+// default
+noise(3,0.1).thresh(0.5,0.04).out(o0)
+</p>
+
+<p>
+noise(3,0.1)
+  .thresh( ({time})=&gt;Math.sin(time/2) , [0.04,0.25,0.75,1].fast(0.25) )
+  .out(o0)
+```
+</p>
+
+<p>
+&#x2014;
+</p>
+
+<p>
+## Geometry
+</p>
+
+<p>
+Functions for manipulating geometry.
+</p>
+
+<ul class="org-ul">
+<li>[kaleid](#kaleid)</li>
+<li>[pixelate](#pixelate)</li>
+<li>[repeat](#repeat)</li>
+<li>[repeatX](#repeatX)</li>
+<li>[repeatY](#repeatY)</li>
+<li>[rotate](#rotate)</li>
+<li>[scale](#scale)</li>
+<li>[scrollX](#scrollX)</li>
+<li>[scrollY](#scrollY)</li>
+</ul>
+
+<p>
+### kaleid
+</p>
+
+<p>
+`.kaleid( nSides )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7617f42" class="outline-2">
+<h2 id="org7617f42"><span class="section-number-2">23</span> `nSides` :: float (default `4.0`)</h2>
+<div class="outline-text-2" id="text-23">
+<p>
+Kaleidoscope effect with `nSides` repetition.
+</p>
+
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+osc(25,-0.1,0.5).kaleid(50).out(o0)
+```
+</p>
+
+<p>
+### pixelate
+</p>
+
+<p>
+`.pixelate( x, y )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb9678a9" class="outline-2">
+<h2 id="orgb9678a9"><span class="section-number-2">24</span> `pixelX` :: float (default `20.0`)</h2>
+</div>
+<div id="outline-container-orgbd5ec44" class="outline-2">
+<h2 id="orgbd5ec44"><span class="section-number-2">25</span> `pixelY` :: float (default `20.0`)</h2>
+<div class="outline-text-2" id="text-25">
+<p>
+Pixelate texture with `pixelX` segments and `pixelY` segments.
+</p>
+
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+// default
+noise().pixelate(20,20).out(o0)
+</p>
+
+<p>
+noise()
+  .mult(osc(10,0.25,1))
+  .scrollY(1,0.25)
+  .pixelate([100,40,20,70].fast(0.25))
+  .modulateRotate(src(o0).scale(0.5),0.125)
+  .diff(src(o0).rotate([-0.05,0.05].fast(0.125)))
+  .out(o0)
+```
+</p>
+
+<p>
+### repeat
+</p>
+
+<p>
+`.repeat( repeatX, repeatY, offsetX, offsetY )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-org70c41b1" class="outline-2">
+<h2 id="org70c41b1"><span class="section-number-2">26</span> `repeatX` :: float (default `3.0`)</h2>
+</div>
+<div id="outline-container-org595a406" class="outline-2">
+<h2 id="org595a406"><span class="section-number-2">27</span> `repeatY` :: float (default `3.0`)</h2>
+</div>
+<div id="outline-container-orgeada6c7" class="outline-2">
+<h2 id="orgeada6c7"><span class="section-number-2">28</span> `offsetX` :: float (default `0.0`)</h2>
+</div>
+<div id="outline-container-orgc625961" class="outline-2">
+<h2 id="orgc625961"><span class="section-number-2">29</span> `offsetY` :: float (default `0.0`)</h2>
+<div class="outline-text-2" id="text-29">
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+// default
+shape().repeat(3.0, 3.0, 0.0, 0.0).out()
+</p>
+
+<p>
+// dogtooth factory
+shape(1.25,0.5,0.25)
+  .repeat(3, 3)
+  .scale(2)
+  .repeat(5, 5, ({time}) =&gt; Math.sin(time), ({time}) =&gt; Math.sin(time/2))
+  .out(o0)
+```
+</p>
+
+<p>
+### repeatX
+</p>
+
+<p>
+`.repeatX( reps, offset )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8aa2be4" class="outline-2">
+<h2 id="org8aa2be4"><span class="section-number-2">30</span> `reps` :: float (default `3.0`)</h2>
+</div>
+<div id="outline-container-org2add107" class="outline-2">
+<h2 id="org2add107"><span class="section-number-2">31</span> `offset` :: float (default `0.0`)</h2>
+<div class="outline-text-2" id="text-31">
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+// default
+shape().repeatX(3.0, 0.0).out()
+</p>
+
+<p>
+osc(5,0,1)
+  .rotate(1.57)
+  .repeatX([1,2,5,10], ({time}) =&gt; Math.sin(time))
+  .out()
+```
+</p>
+
+<p>
+### repeatY
+</p>
+
+<p>
+`.repeatY( reps, offset )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7ea25e5" class="outline-2">
+<h2 id="org7ea25e5"><span class="section-number-2">32</span> `reps` :: float (default `3.0`)</h2>
+</div>
+<div id="outline-container-org07ecbaf" class="outline-2">
+<h2 id="org07ecbaf"><span class="section-number-2">33</span> `offset` :: float (default `0.0`)</h2>
+<div class="outline-text-2" id="text-33">
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+// default
+shape().repeatY(3.0, 0.0).out()
+</p>
+
+<p>
+osc(5,0,1)
+  .repeatY([1,2,5,10], ({time}) =&gt; Math.sin(time))
+  .out()
+```
+</p>
+
+<p>
+### rotate
+</p>
+
+<p>
+`.rotate( angle, speed )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5f21d3c" class="outline-2">
+<h2 id="org5f21d3c"><span class="section-number-2">34</span> `angle` :: float (default `10.0`)</h2>
+</div>
+<div id="outline-container-orga07aacb" class="outline-2">
+<h2 id="orga07aacb"><span class="section-number-2">35</span> `speed` :: float (default `0.0`)</h2>
+<div class="outline-text-2" id="text-35">
+<p>
+Rotate texture.
+</p>
+
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+osc(50).rotate( ({time}) =&gt; time%360 ).out(o0)
+</p>
+
+<p>
+osc(10,1,1)
+    .rotate( ({time}) =&gt; time%360, ({time}) =&gt; Math.sin(time*0.1)*0.05 )
+    .out(o0)
+```
+</p>
+
+<p>
+### scale
+</p>
+
+<p>
+`.scale( size, xMult, yMult )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-org02f8e56" class="outline-2">
+<h2 id="org02f8e56"><span class="section-number-2">36</span> `size` :: float (default `1.5`)</h2>
+</div>
+<div id="outline-container-orgc7930d1" class="outline-2">
+<h2 id="orgc7930d1"><span class="section-number-2">37</span> `xMult` :: float (default `1.0`)</h2>
+</div>
+<div id="outline-container-org2e61cbc" class="outline-2">
+<h2 id="org2e61cbc"><span class="section-number-2">38</span> `yMult` :: float (default `1.0`)</h2>
+<div class="outline-text-2" id="text-38">
+<p>
+Scale texture.
+</p>
+
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+// default
+shape().scale(1.5,1,1).out()
+</p>
+
+<p>
+shape().scale(1.5,[0.25,0.5,0.75,1].fast(0.25),[3,2,1])
+  .invert([0,1].fast(0.25))
+  .kaleid(5)
+  .kaleid(12)
+  .scale( ({time})=&gt;Math.sin(time/5)*0.5 )
+  .rotate(1,1)
+  .out(o0)
+```
+</p>
+
+<p>
+### scrollX
+</p>
+
+<p>
+`.scrollX( scrollX, speed )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-org405b5e0" class="outline-2">
+<h2 id="org405b5e0"><span class="section-number-2">39</span> `scrollX` :: float (default `0.5`)</h2>
+</div>
+<div id="outline-container-orgb549fd0" class="outline-2">
+<h2 id="orgb549fd0"><span class="section-number-2">40</span> `speed` :: float (default `0.0`)</h2>
+<div class="outline-text-2" id="text-40">
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+// default
+osc(10,0,1).scrollX(0.5,0).out()
+</p>
+
+<p>
+// x position
+osc(10,0,1).scrollX([0,0.25,0.5,0.75,1].fast(4),0).out()
+</p>
+
+<p>
+// scroll speed
+gradient(1).scrollX(0, ({time}) =&gt; Math.sin(time*0.05)*0.05 ).out()
+</p>
+
+<p>
+gradient(0.125)
+  .scrollX(0, ({time}) =&gt; Math.sin(time*0.05)*0.05 )
+  .scrollY(0, ({time}) =&gt; Math.sin(time*0.01)*-0.07 )
+  .pixelate([5,2,10],[15,8])
+  .scale(0.15)
+  .modulate(noise(1,0.25))
+  .out()
+```
+</p>
+
+<p>
+### scrollY
+</p>
+
+<p>
+`.scrollY( scrollY, speed )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga5ba871" class="outline-2">
+<h2 id="orga5ba871"><span class="section-number-2">41</span> `scrollY` :: float (default `0.5`)</h2>
+</div>
+<div id="outline-container-org0d1b471" class="outline-2">
+<h2 id="org0d1b471"><span class="section-number-2">42</span> `speed` :: float (default `0.0`)</h2>
+<div class="outline-text-2" id="text-42">
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+// default
+osc(10,0,1).scrollY(0.5,0).out()
+</p>
+
+<p>
+// y position
+osc(10,0,1).scrollY([0,0.25,0.5,0.75,1].fast(4),0).out()
+</p>
+
+<p>
+// scroll speed
+gradient(1).scrollY(0, ({time}) =&gt; Math.sin(time*0.05)*0.05 ).out()
+</p>
+
+<p>
+gradient(0.125)
+  .scrollX(0, ({time}) =&gt; Math.sin(time*0.05)*0.05 )
+  .scrollY(0, ({time}) =&gt; Math.sin(time*0.01)*-0.07 )
+  .pixelate([5,2,10],[15,8])
+  .scale(0.15)
+  .modulate(noise(1,0.25))
+  .out()
+```
+</p>
+
+<p>
+&#x2014;
+</p>
+
+<p>
+## Global variables
+</p>
+
+<p>
+Useful variables that are defined globally, and can be used within functions as a parameter.
+</p>
+
+<ul class="org-ul">
+<li>[mouse](#mouse)</li>
+<li>[time](#time)</li>
+</ul>
+
+<p>
+### mouse
+</p>
+
+<p>
+`mouse`
+</p>
+</div>
+</div>
+
+<div id="outline-container-org753a243" class="outline-2">
+<h2 id="org753a243"><span class="section-number-2">43</span> `.x` :: x position of mouse</h2>
+</div>
+<div id="outline-container-org47d3ac5" class="outline-2">
+<h2 id="org47d3ac5"><span class="section-number-2">44</span> `.y` :: y position of mouse</h2>
+<div class="outline-text-2" id="text-44">
+<p>
+#### Example
+</p>
+
+<p>
+Control the oscillator frequency with the mouse position:
+</p>
+
+<p>
+```javascript
+osc(() =&gt; mouse.x).out(o0)
+```
+</p>
+
+<p>
+### time
+</p>
+
+<p>
+`time`
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf2d87a9" class="outline-2">
+<h2 id="orgf2d87a9"><span class="section-number-2">45</span> `time` :: the current time</h2>
+<div class="outline-text-2" id="text-45">
+<p>
+#### Example
+</p>
+
+<p>
+Control the oscillator using a sine wave based on the current time:
+</p>
+
+<p>
+```javascript
+osc( ({time}) =&gt; Math.sin(time) ).out(o0)
+```
+</p>
+
+<p>
+&#x2014;
+</p>
+
+<p>
+## Modulators
+</p>
+
+<p>
+Functions for describing modulations of sources. 
+</p>
+
+<ul class="org-ul">
+<li>[modulate](#modulate)</li>
+<li>[modulateHue](#modulateHue)</li>
+<li>[modulateKaleid](#modulateKaleid)</li>
+<li>[modulatePixelate](#modulatePixelate)</li>
+<li>[modulateRepeat](#modulateRepeat)</li>
+<li>[modulateRepeatX](#modulateRepeatX)</li>
+<li>[modulateRepeatY](#modulateRepeatY)</li>
+<li>[modulateRotate](#modulateRotate)</li>
+<li>[modulateScale](#modulateScale)</li>
+<li>[modulateScrollX](#modulateScrollX)</li>
+<li>[modulateScrollY](#modulateScrollY)</li>
+</ul>
+
+<p>
+### modulate
+</p>
+
+<p>
+`.modulate( texture, amount )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-org22dcaae" class="outline-2">
+<h2 id="org22dcaae"><span class="section-number-2">46</span> `texture`</h2>
+<div class="outline-text-2" id="text-46">
+<dl class="org-dl">
+<dt>`color`</dt><dd>see [color `vec4`](#color-vec4)</dd>
+<dt>`src`</dt><dd>see [`src`](#src)</dd>
+<dt>`shape`</dt><dd>see [`shape`](#shape)</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-org768fd8a" class="outline-2">
+<h2 id="org768fd8a"><span class="section-number-2">47</span> `amount` :: float (default `0.1`)</h2>
+<div class="outline-text-2" id="text-47">
+<p>
+Modulate texture. 
+More about modulation at: <a href="https://lumen-app.com/guide/modulation/">https://lumen-app.com/guide/modulation/</a>
+</p>
+
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+// chocolate whirlpool
+voronoi()
+  .color(0.9,0.25,0.15)
+  .rotate(({time})=&gt;(time%360)/2)
+  .modulate(osc(25,0.1,0.5)
+            .kaleid(50)
+            .scale(({time})=&gt;Math.sin(time*1)*0.5+1)
+            .modulate(noise(0.6,0.5)),
+            0.5)
+  .out(o0)
+```
+</p>
+
+<p>
+### modulateHue
+</p>
+
+<p>
+`.modulateHue( color, amount )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-org77d9243" class="outline-2">
+<h2 id="org77d9243"><span class="section-number-2">48</span> `texture`</h2>
+<div class="outline-text-2" id="text-48">
+<dl class="org-dl">
+<dt>`color`</dt><dd>see [color `vec4`](#color-vec4)</dd>
+<dt>`src`</dt><dd>see [`src`](#src)</dd>
+<dt>`shape`</dt><dd>see [`shape`](#shape)</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-org36081da" class="outline-2">
+<h2 id="org36081da"><span class="section-number-2">49</span> `amount` :: float (default `1.0`)</h2>
+<div class="outline-text-2" id="text-49">
+<p>
+Changes coordinates based on hue of second input. 
+Based on:<a href="https://www.shadertoy.com/view/XtcSWM">https://www.shadertoy.com/view/XtcSWM</a>
+</p>
+
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+</p>
+
+<p>
+```
+</p>
+
+<p>
+### modulateKaleid
+</p>
+
+<p>
+`.modulateKaleid( nSides )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4720ce5" class="outline-2">
+<h2 id="org4720ce5"><span class="section-number-2">50</span> `texture`</h2>
+<div class="outline-text-2" id="text-50">
+<dl class="org-dl">
+<dt>`color`</dt><dd>see [color `vec4`](#color-vec4)</dd>
+<dt>`src`</dt><dd>see [`src`](#src)</dd>
+<dt>`shape`</dt><dd>see [`shape`](#shape)</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-orgcf7655d" class="outline-2">
+<h2 id="orgcf7655d"><span class="section-number-2">51</span> `nSides` :: float (default `4.0`)</h2>
+<div class="outline-text-2" id="text-51">
+<p>
+See also: [`kaleid`](#kaleid).
+</p>
+
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+osc(9,-0.1,0.1)
+  .modulateKaleid(osc(11,0.5,0),50)
+  .scale(0.1,0.3)
+  .modulate(noise(5,0.1))
+  .mult(solid(1,1,0.3))
+  .out(o0)
+```
+</p>
+
+<p>
+### modulatePixelate
+</p>
+
+<p>
+`.modulatePixelate( multiple, offset )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge47c304" class="outline-2">
+<h2 id="orge47c304"><span class="section-number-2">52</span> `texture`</h2>
+<div class="outline-text-2" id="text-52">
+<dl class="org-dl">
+<dt>`color`</dt><dd>see [color `vec4`](#color-vec4)</dd>
+<dt>`src`</dt><dd>see [`src`](#src)</dd>
+<dt>`shape`</dt><dd>see [`shape`](#shape)</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-orgb9d12da" class="outline-2">
+<h2 id="orgb9d12da"><span class="section-number-2">53</span> `multiple` :: float (default `10.0`)</h2>
+</div>
+<div id="outline-container-orge60103e" class="outline-2">
+<h2 id="orge60103e"><span class="section-number-2">54</span> `offset` :: float (default `3.0`)</h2>
+<div class="outline-text-2" id="text-54">
+<p>
+See also: [`pixelate`](#pixelate)
+</p>
+
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+// what lies beneath
+voronoi(10,1,5).brightness(()=&gt;Math.random()*0.15)
+  .modulatePixelate(noise(25,0.5),100)
+  .out(o0)
+```
+</p>
+
+<p>
+### modulateRepeat
+</p>
+
+<p>
+`.modulateRepeat( texture, repeatX, repeatY, offsetX, offsetY )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-org902b1d4" class="outline-2">
+<h2 id="org902b1d4"><span class="section-number-2">55</span> `texture`</h2>
+<div class="outline-text-2" id="text-55">
+<dl class="org-dl">
+<dt>`color`</dt><dd>see [color `vec4`](#color-vec4)</dd>
+<dt>`src`</dt><dd>see [`src`](#src)</dd>
+<dt>`shape`</dt><dd>see [`shape`](#shape)</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-org87f6532" class="outline-2">
+<h2 id="org87f6532"><span class="section-number-2">56</span> `repeatX` :: float (default `3.0`)</h2>
+</div>
+<div id="outline-container-orgd93084e" class="outline-2">
+<h2 id="orgd93084e"><span class="section-number-2">57</span> `repeatY` :: float (default `3.0`)</h2>
+</div>
+<div id="outline-container-org07c2cf0" class="outline-2">
+<h2 id="org07c2cf0"><span class="section-number-2">58</span> `offsetX` :: float (default `0.5`)</h2>
+</div>
+<div id="outline-container-org2762658" class="outline-2">
+<h2 id="org2762658"><span class="section-number-2">59</span> `offsetY` :: float (default `0.5`)</h2>
+<div class="outline-text-2" id="text-59">
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+// default
+shape(4,0.9)
+  .mult(osc(3,0.5,1))
+  .modulateRepeat(osc(10), 3.0, 3.0, 0.5, 0.5)
+  .out(o0)
+```
+</p>
+
+<p>
+### modulateRepeatX
+</p>
+
+<p>
+`.modulateRepeatX( texture, reps, offset )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge1c1727" class="outline-2">
+<h2 id="orge1c1727"><span class="section-number-2">60</span> `texture`</h2>
+<div class="outline-text-2" id="text-60">
+<dl class="org-dl">
+<dt>`color`</dt><dd>see [color `vec4`](#color-vec4)</dd>
+<dt>`src`</dt><dd>see [`src`](#src)</dd>
+<dt>`shape`</dt><dd>see [`shape`](#shape)</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-org1d42c15" class="outline-2">
+<h2 id="org1d42c15"><span class="section-number-2">61</span> `reps` :: float (default `3.0`)</h2>
+</div>
+<div id="outline-container-orga2bc200" class="outline-2">
+<h2 id="orga2bc200"><span class="section-number-2">62</span> `offset` :: float (default `0.5`)</h2>
+<div class="outline-text-2" id="text-62">
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+// straight lines illusion
+shape(4,0.9)
+  .mult(osc(4,0.25,1))
+  .modulateRepeatX(osc(10), 5.0, ({time}) =&gt; Math.sin(time) * 5)
+  .scale(1,0.5,0.05)
+  .out(o0)
+```
+</p>
+
+<p>
+### modulateRepeatY
+</p>
+
+<p>
+`.modulateRepeatY( texture, reps, offset )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-org997e36f" class="outline-2">
+<h2 id="org997e36f"><span class="section-number-2">63</span> `texture`</h2>
+<div class="outline-text-2" id="text-63">
+<dl class="org-dl">
+<dt>`color`</dt><dd>see [color `vec4`](#color-vec4)</dd>
+<dt>`src`</dt><dd>see [`src`](#src)</dd>
+<dt>`shape`</dt><dd>see [`shape`](#shape)</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-org778f7c9" class="outline-2">
+<h2 id="org778f7c9"><span class="section-number-2">64</span> `reps` :: float (default `3.0`)</h2>
+</div>
+<div id="outline-container-orgd226888" class="outline-2">
+<h2 id="orgd226888"><span class="section-number-2">65</span> `offset` :: float (default `0.5`)</h2>
+<div class="outline-text-2" id="text-65">
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+// morphing grid
+shape(4,0.9)
+  .mult(osc(4,0.25,1))
+  .modulateRepeatY(osc(10), 5.0, ({time}) =&gt; Math.sin(time) * 5)
+  .scale(1,0.5,0.05)
+  .out(o0)
+```
+</p>
+
+<p>
+### modulateRotate
+</p>
+
+<p>
+`.modulateRotate( texture, multiple, offset )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8d20816" class="outline-2">
+<h2 id="org8d20816"><span class="section-number-2">66</span> `texture`</h2>
+<div class="outline-text-2" id="text-66">
+<dl class="org-dl">
+<dt>`color`</dt><dd>see [color `vec4`](#color-vec4)</dd>
+<dt>`src`</dt><dd>see [`src`](#src)</dd>
+<dt>`shape`</dt><dd>see [`shape`](#shape)</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-org525bbcc" class="outline-2">
+<h2 id="org525bbcc"><span class="section-number-2">67</span> `multiple` :: float (default `1.0`)</h2>
+</div>
+<div id="outline-container-org644f7a2" class="outline-2">
+<h2 id="org644f7a2"><span class="section-number-2">68</span> `offset` :: float (default `0.0`)</h2>
+<div class="outline-text-2" id="text-68">
+<p>
+See also: [`rotate`](#rotate)
+</p>
+
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+// wormhole
+voronoi(100,3,5)
+  .modulateRotate(osc(1,0.5,0).kaleid(50).scale(0.5),15,0)
+  .mult(osc(50,-0.1,8).kaleid(9))
+  .out(o0)
+```
+</p>
+
+<p>
+### modulateScale
+</p>
+
+<p>
+`.modulateScale( multiple, offset )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4458e89" class="outline-2">
+<h2 id="org4458e89"><span class="section-number-2">69</span> `texture`</h2>
+<div class="outline-text-2" id="text-69">
+<dl class="org-dl">
+<dt>`color`</dt><dd>see [color `vec4`](#color-vec4)</dd>
+<dt>`src`</dt><dd>see [`src`](#src)</dd>
+<dt>`shape`</dt><dd>see [`shape`](#shape)</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-orga1a2330" class="outline-2">
+<h2 id="orga1a2330"><span class="section-number-2">70</span> `multiple` :: float (default `1.0`)</h2>
+</div>
+<div id="outline-container-org1d067ee" class="outline-2">
+<h2 id="org1d067ee"><span class="section-number-2">71</span> `offset` :: float (default `1.0`)</h2>
+<div class="outline-text-2" id="text-71">
+<p>
+See also: [`scale`](#scale)
+</p>
+
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+// cosmic radiation
+gradient(5).repeat(50,50).kaleid([3,5,7,9].fast(0.5))
+  .modulateScale(osc(4,-0.5,0).kaleid(50).scale(0.5),15,0)
+  .out(o0)
+```
+</p>
+
+<p>
+### modulateScrollX
+</p>
+
+<p>
+`.modulateScrollX( multiple, scrollX, speed )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0104f01" class="outline-2">
+<h2 id="org0104f01"><span class="section-number-2">72</span> `texture`</h2>
+<div class="outline-text-2" id="text-72">
+<dl class="org-dl">
+<dt>`color`</dt><dd>see [color `vec4`](#color-vec4)</dd>
+<dt>`src`</dt><dd>see [`src`](#src)</dd>
+<dt>`shape`</dt><dd>see [`shape`](#shape)</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-orgab88d44" class="outline-2">
+<h2 id="orgab88d44"><span class="section-number-2">73</span> `scrollX` :: float (default `0.5`)</h2>
+</div>
+<div id="outline-container-org80fff94" class="outline-2">
+<h2 id="org80fff94"><span class="section-number-2">74</span> `speed` :: float (default `0.0`)</h2>
+<div class="outline-text-2" id="text-74">
+<p>
+See also: [`scrollX`](#scrollx)
+</p>
+
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+// default
+voronoi(25,0,0)
+  .modulateScrollX(osc(10),0.5,0)
+  .out(o0)
+</p>
+
+<p>
+// different scroll and speed
+voronoi(25,0,0)
+  .modulateScrollX(osc(10),0.5,0.25)
+  .out(o0)
+```
+</p>
+
+<p>
+### modulateScrollY
+</p>
+
+<p>
+`.modulateScrollY( multiple, scrollX, speed )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4f37625" class="outline-2">
+<h2 id="org4f37625"><span class="section-number-2">75</span> `texture`</h2>
+<div class="outline-text-2" id="text-75">
+<dl class="org-dl">
+<dt>`color`</dt><dd>see [color `vec4`](#color-vec4)</dd>
+<dt>`src`</dt><dd>see [`src`](#src)</dd>
+<dt>`shape`</dt><dd>see [`shape`](#shape)</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-orge5757a9" class="outline-2">
+<h2 id="orge5757a9"><span class="section-number-2">76</span> `scrollY` :: float (default `0.5`)</h2>
+</div>
+<div id="outline-container-orgbc0e46b" class="outline-2">
+<h2 id="orgbc0e46b"><span class="section-number-2">77</span> `speed` :: float (default `0.0`)</h2>
+<div class="outline-text-2" id="text-77">
+<p>
+See also: [`scrollY`](#scrollY)
+</p>
+
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+// default
+voronoi(25,0,0)
+  .modulateScrollY(osc(10),0.5,0)
+  .out(o0)
+</p>
+
+<p>
+// different scroll and speed
+voronoi(25,0,0)
+  .modulateScrollY(osc(10),0.5,0.25)
+  .out(o0)
+```
+</p>
+
+<p>
+&#x2014;
+</p>
+
+<p>
+## Operators
+</p>
+
+<p>
+Functions for performing operations on sources.
+</p>
+
+<ul class="org-ul">
+<li>[add](#add)</li>
+<li>[blend](#blend)</li>
+<li>[diff](#diff)</li>
+<li>[layer](#layer)</li>
+<li>[mask](#mask)</li>
+<li>[mult](#mult)</li>
+</ul>
+
+<p>
+### add
+</p>
+
+<p>
+`.add( texture, amount )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6b3ccc3" class="outline-2">
+<h2 id="org6b3ccc3"><span class="section-number-2">78</span> `texture`</h2>
+<div class="outline-text-2" id="text-78">
+<dl class="org-dl">
+<dt>`color`</dt><dd>see [color `vec4`](#color-vec4)</dd>
+<dt>`src`</dt><dd>see [`src`](#src)</dd>
+<dt>`shape`</dt><dd>see [`shape`](#shape)</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-orgcb2dfed" class="outline-2">
+<h2 id="orgcb2dfed"><span class="section-number-2">79</span> `amount` :: float (default `0.5`)</h2>
+<div class="outline-text-2" id="text-79">
+<p>
+Add textures.
+</p>
+
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+shape().scale(0.5).add(shape(4),[0,0.25,0.5,0.75,1]).out()
+</p>
+
+<p>
+osc(9,0.1,1).add(osc(13,0.5,5)).out()
+```
+</p>
+
+<p>
+### blend
+</p>
+
+<p>
+`.blend( texture, amount )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0cde316" class="outline-2">
+<h2 id="org0cde316"><span class="section-number-2">80</span> `texture`</h2>
+<div class="outline-text-2" id="text-80">
+<dl class="org-dl">
+<dt>`color`</dt><dd>see [color `vec4`](#color-vec4)</dd>
+<dt>`src`</dt><dd>see [`src`](#src)</dd>
+<dt>`shape`</dt><dd>see [`shape`](#shape)</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-orgc4cec39" class="outline-2">
+<h2 id="orgc4cec39"><span class="section-number-2">81</span> `amount` :: float (default `0.5`)</h2>
+<div class="outline-text-2" id="text-81">
+<p>
+Blend textures.
+</p>
+
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+shape().scale(0.5).blend(shape(4),[0,0.25,0.5,0.75,1]).out()
+</p>
+
+<p>
+osc(9,0.1,1).blend(osc(13,0.5,5)).out()
+```
+</p>
+
+<p>
+### diff
+</p>
+
+<p>
+`.diff( texture )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga79a69f" class="outline-2">
+<h2 id="orga79a69f"><span class="section-number-2">82</span> `texture`</h2>
+<div class="outline-text-2" id="text-82">
+<dl class="org-dl">
+<dt>`color`</dt><dd>see [color `vec4`](#color-vec4)</dd>
+<dt>`src`</dt><dd>see [`src`](#src)</dd>
+<dt>`shape`</dt><dd>see [`shape`](#shape)</dd>
+</dl>
+
+<p>
+Return difference of textures.
+</p>
+
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+osc(9,0.1,1).diff(osc(13,0.5,5)).out()
+</p>
+
+<p>
+osc(1,1,2)
+  .diff(shape(6,1.1,0.01)
+        .scale(({time})=&gt;Math.sin(time)*0.05 + 0.9)
+        .kaleid(15)
+        .rotate(({time})=&gt;time%360))
+  .out()
+```
+</p>
+
+<p>
+### layer
+</p>
+
+<p>
+`.layer( texture )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8edd208" class="outline-2">
+<h2 id="org8edd208"><span class="section-number-2">83</span> `texture`</h2>
+<div class="outline-text-2" id="text-83">
+<dl class="org-dl">
+<dt>`color`</dt><dd>see [color `vec4`](#color-vec4)</dd>
+<dt>`src`</dt><dd>see [`src`](#src)</dd>
+<dt>`shape`</dt><dd>see [`shape`](#shape)</dd>
+</dl>
+
+<p>
+Overlay texture based on alpha value.
+</p>
+
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+solid(1,0,0,1).layer(shape(4).color(0,1,0,({time})=&gt;Math.sin(time*2))).out()
+```
+</p>
+
+<p>
+### mask
+</p>
+
+<p>
+`.mask( texture, reps, offset )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-org67d09ed" class="outline-2">
+<h2 id="org67d09ed"><span class="section-number-2">84</span> `texture`</h2>
+<div class="outline-text-2" id="text-84">
+<dl class="org-dl">
+<dt>`color`</dt><dd>see [color `vec4`](#color-vec4)</dd>
+<dt>`src`</dt><dd>see [`src`](#src)</dd>
+<dt>`shape`</dt><dd>see [`shape`](#shape)</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-org88108a5" class="outline-2">
+<h2 id="org88108a5"><span class="section-number-2">85</span> `reps` :: float (default `3.0`)</h2>
+</div>
+<div id="outline-container-org82e74c5" class="outline-2">
+<h2 id="org82e74c5"><span class="section-number-2">86</span> `offset` :: float (default `0.5`)</h2>
+<div class="outline-text-2" id="text-86">
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+// default
+gradient(5).mask(voronoi(),3,0.5).invert([0,1]).out()
+</p>
+
+<p>
+// algae pulse
+osc(10,-0.25,1).color(0,0,1).saturate(2).kaleid(50)
+  .mask(noise(25,2).modulateScale(noise(0.25,0.05)))
+  .modulateScale(osc(6,-0.5,2).kaleid(50))
+  .mult(osc(3,-0.25,2).kaleid(50))
+  .scale(0.5,0.5,0.75)
+  .out()
+```
+</p>
+
+<p>
+### mult
+</p>
+
+<p>
+`.mult( texture, amount )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge2da64a" class="outline-2">
+<h2 id="orge2da64a"><span class="section-number-2">87</span> `texture`</h2>
+<div class="outline-text-2" id="text-87">
+<dl class="org-dl">
+<dt>`color`</dt><dd>see [color `vec4`](#color-vec4)</dd>
+<dt>`src`</dt><dd>see [`src`](#src)</dd>
+<dt>`shape`</dt><dd>see [`shape`](#shape)</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-org5b445b7" class="outline-2">
+<h2 id="org5b445b7"><span class="section-number-2">88</span> `amount` :: float (default `1.0`)</h2>
+<div class="outline-text-2" id="text-88">
+<p>
+Multiply images and blend with the texture by `amount`.
+</p>
+
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+osc(9,0.1,2).mult(osc(13,0.5,5)).out()
+```
+</p>
+
+<p>
+&#x2014;
+</p>
+
+<p>
+## Sources
+</p>
+
+<p>
+Sources are elementary generators that output different types of visual content.
+</p>
+
+<ul class="org-ul">
+<li>[gradient](#gradient)</li>
+<li>[noise](#noise)</li>
+<li>[osc](#osc)</li>
+<li>[out](#out)</li>
+<li>[render](#render)</li>
+<li>[shape](#shape)</li>
+<li>[solid](#solid)</li>
+<li>[src](#src)</li>
+<li>[voronoi](#voronoi)</li>
+</ul>
+
+<p>
+### gradient
+</p>
+
+<p>
+`gradient( speed )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-org86b1693" class="outline-2">
+<h2 id="org86b1693"><span class="section-number-2">89</span> `speed` :: float (default `x`)</h2>
+<div class="outline-text-2" id="text-89">
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+// gradient sequence at speeds of 1, 2 &amp; 4
+gradient([1,2,4]).out(o0)
+```
+</p>
+
+<p>
+### noise
+</p>
+
+<p>
+`noise( scale, offset )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-org734cb9d" class="outline-2">
+<h2 id="org734cb9d"><span class="section-number-2">90</span> `scale` :: int (default `10.0`)</h2>
+</div>
+<div id="outline-container-orgd8a22ba" class="outline-2">
+<h2 id="orgd8a22ba"><span class="section-number-2">91</span> `offset` :: float (default `0.1`)</h2>
+<div class="outline-text-2" id="text-91">
+<p>
+Generate [Perlin noise](<a href="https://en.wikipedia.org/wiki/Perlin_noise">https://en.wikipedia.org/wiki/Perlin_noise</a>).
+</p>
+
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+// noise interpolating between different scales and offsets
+noise( ({time}) =&gt; Math.sin(time/10)*50 , ({time}) =&gt; Math.sin(time/2)/500 )
+    .out(o0)
+```
+</p>
+
+<p>
+### osc
+</p>
+
+<p>
+`osc( frequency, sync, offset )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-org64d83cb" class="outline-2">
+<h2 id="org64d83cb"><span class="section-number-2">92</span> `frequency` :: float (default `60.0`)</h2>
+</div>
+<div id="outline-container-org46b10cf" class="outline-2">
+<h2 id="org46b10cf"><span class="section-number-2">93</span> `sync` :: float (default `0.1`)</h2>
+</div>
+<div id="outline-container-orgf9fdce3" class="outline-2">
+<h2 id="orgf9fdce3"><span class="section-number-2">94</span> `offset` :: float (default `0.0`)</h2>
+<div class="outline-text-2" id="text-94">
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+// frequency
+osc( [1,10,50,100,250,500].fast(2) ).out(o0)
+</p>
+
+<p>
+// frequency 2
+osc( ({time}) =&gt; Math.sin(time/10) * 100 ).out(o0)
+</p>
+
+<p>
+// sync
+osc( 10, [-10,-1,-0.1,0,0.1,1,10], 0 ).out(o0)
+</p>
+
+<p>
+// offset
+osc(10,0.1, ({time}) =&gt; Math.sin(time/10) * 100 ).out(o0)
+```
+</p>
+
+<p>
+### out
+</p>
+
+<p>
+`.out( buffer )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1bbd91d" class="outline-2">
+<h2 id="org1bbd91d"><span class="section-number-2">95</span> `buffer`</h2>
+<div class="outline-text-2" id="text-95">
+<ul class="org-ul">
+<li>`osc`: `o0`, `o1`, `o2`, `o3`</li>
+<li>`src`: `s0`, `s1`, `s2`, `s3`</li>
+</ul>
+
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+<i>/ output four oscillators to different buffers
+/</i> and then modulate them together
+osc( [1,10,50,100,250,500].fast(2) ).kaleid(20).out(o0) <i>/ frequency
+osc( ({time}) =&gt; Math.sin(time/10) * 100 ).kaleid(19).out(o1) /</i> frequency 2
+osc( 10, [-10,-1,-0.1,0,0.1,1,10], 0 ).kaleid(21).out(o2) <i>/ sync
+osc(10,0.1, ({time}) =&gt; Math.sin(time/10) * 1 ) /</i> offset
+  .modulate(o1,0.05)
+  .modulate(o2,0.05)
+  .modulate(o3,0.05)
+  .kaleid(20)
+  .add(noise(3,10))
+  .out(o3)
+render(o3)
+```
+</p>
+
+<p>
+### render
+</p>
+
+<p>
+`render( buffer )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0e1b62b" class="outline-2">
+<h2 id="org0e1b62b"><span class="section-number-2">96</span> `buffer`: buffer (default `o0`)</h2>
+<div class="outline-text-2" id="text-96">
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+osc( [1,10,50,100,250,500].fast(2) ).out(o0) <i>/ frequency
+osc( ({time}) =&gt; Math.sin(time/10) * 100 ).out(o1) /</i> frequency 2
+osc( 10, [-10,-1,-0.1,0,0.1,1,10], 0 ).out(o2) <i>/ sync
+osc(10,0.1, ({time}) =&gt; Math.sin(time/10) * 100 ).out(o3) /</i> offset
+</p>
+
+<p>
+render(o0) // change to o1, o2, or o3
+```
+</p>
+
+<p>
+```javascript
+<i>/ see all four buffers at once
+osc( [1,10,50,100,250,500].fast(2) ).out(o0) /</i> frequency
+osc( ({time}) =&gt; Math.sin(time/10) * 100 ).out(o1) <i>/ frequency 2
+osc( 10, [-10,-1,-0.1,0,0.1,1,10], 0 ).out(o2) /</i> sync
+osc(10,0.1, ({time}) =&gt; Math.sin(time/10) * 100 ).out(o3) // offset
+render()
+```
+</p>
+
+<p>
+### shape
+</p>
+
+<p>
+`shape( sides, radius, smoothing)`
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc65876e" class="outline-2">
+<h2 id="orgc65876e"><span class="section-number-2">97</span> `sides` :: int (default `3.0`)</h2>
+</div>
+<div id="outline-container-org52ff85f" class="outline-2">
+<h2 id="org52ff85f"><span class="section-number-2">98</span> `radius` :: float (default `0.3`)</h2>
+</div>
+<div id="outline-container-orga19df90" class="outline-2">
+<h2 id="orga19df90"><span class="section-number-2">99</span> `smoothing` :: float (default `0.01`)</h2>
+<div class="outline-text-2" id="text-99">
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+// inverting blurry circle
+shape(100,0.01,1).invert(({time})=&gt;Math.sin(time)*2).out(o0)
+</p>
+
+<p>
+// a&#x2026; rainbow ball?
+shape(5,0.5,0.1).repeat(19,19)
+  .mult(osc(10,1,2))
+  .rotate( ({time}) =&gt; time%360 )
+  .scrollX(1,-0.25)
+  .mult(shape(15,0.3,0.01)
+        .rotate( ({time}) =&gt; time%360 )
+        .scrollX(1,-0.25))
+  .out(o0)
+```
+</p>
+
+<p>
+### solid
+</p>
+
+<p>
+`solid( r, g, b, a )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-org223a8e5" class="outline-2">
+<h2 id="org223a8e5"><span class="section-number-2">100</span> `r` :: float (default `0.0`)</h2>
+</div>
+<div id="outline-container-orgf65a480" class="outline-2">
+<h2 id="orgf65a480"><span class="section-number-2">101</span> `g` :: float (default `0.0`)</h2>
+</div>
+<div id="outline-container-org6fbb6ad" class="outline-2">
+<h2 id="org6fbb6ad"><span class="section-number-2">102</span> `b` :: float (default `0.0`)</h2>
+</div>
+<div id="outline-container-org6f6b1af" class="outline-2">
+<h2 id="org6f6b1af"><span class="section-number-2">103</span> `a` :: float (default `1.0`)</h2>
+<div class="outline-text-2" id="text-103">
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+// cycling through red, green and blue
+solid([1,0,0],[0,1,0],[0,0,1],1).out(o0)
+```
+</p>
+
+<p>
+### src
+</p>
+
+<p>
+`src( input )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9103550" class="outline-2">
+<h2 id="org9103550"><span class="section-number-2">104</span> `input` :: input (examples: `o0`, `s1`)</h2>
+<div class="outline-text-2" id="text-104">
+<p>
+See `hydra-examples` repository
+</p>
+
+<p>
+### voronoi
+</p>
+
+<p>
+`voronoi( scale, speed, blending )`
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfb4e554" class="outline-2">
+<h2 id="orgfb4e554"><span class="section-number-2">105</span> `scale` :: float (default `5`)</h2>
+</div>
+<div id="outline-container-org09392aa" class="outline-2">
+<h2 id="org09392aa"><span class="section-number-2">106</span> `speed` :: float (default `0.3`)</h2>
+</div>
+<div id="outline-container-org7897592" class="outline-2">
+<h2 id="org7897592"><span class="section-number-2">107</span> `blending` :: float (default `0.3`)</h2>
+<div class="outline-text-2" id="text-107">
+<p>
+Generate [voronoi shapes](<a href="https://en.wikipedia.org/wiki/Voronoi_diagram">https://en.wikipedia.org/wiki/Voronoi_diagram</a>).
+</p>
+
+<p>
+#### Example
+</p>
+
+<p>
+```javascript
+// default
+voronoi(5,0.3,0.3).out(o0)
+</p>
+
+<p>
+// fireflies
+voronoi(25,2,10).color(1,1,0).brightness(0.15).out(o0)
+```
+</p>
+
+<p>
+&#x2014;
+</p>
+
+<p>
+## Parameter sequences
+</p>
+
+<ul class="org-ul">
+<li>[Lists as parameter sequences](#lists-as-parameter-sequences)</li>
+<li>[Functions on parameter sequences](#functions-on-parameter-sequences)
+<ul class="org-ul">
+<li>[fast](#fast)</li>
+</ul></li>
+</ul>
+
+<p>
+### Lists as parameter sequences
+</p>
+
+<p>
+```
+osc(
+   [80, 100, 200, 50], 1 )
+)
+.out(o0)
+```
+</p>
+
+<p>
+### Functions on parameter sequences
+</p>
+
+<p>
+#### fast
+</p>
+
+<p>
+`fast ( amount) `
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7610459" class="outline-2">
+<h2 id="org7610459"><span class="section-number-2">108</span> `amount` :: float (default `x`)</h2>
+<div class="outline-text-2" id="text-108">
+<p>
+```
+osc(
+   [80, 100, 200, 50].fast(0.2), 1 )
+)
+.out(o0)
+```
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Aleksandr Yakunichev</p>
+<p class="date">Created: 2020-02-12 Wed 12:37</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
